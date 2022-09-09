@@ -2988,17 +2988,26 @@ jSuites.contextmenu = (function(el, options) {
 
         // Coordinates
         if ((obj.options.items && obj.options.items.length > 0) || el.children.length) {
-            if (e.target) {
-                if (e.changedTouches && e.changedTouches[0]) {
-                    x = e.changedTouches[0].clientX;
-                    y = e.changedTouches[0].clientY;
+            if (x_custom && y_custom) {
+                        var exp = $('.highlight-selected')[0]
+                        var rect = exp.getBoundingClientRect();
+                        var x = rect.right;
+                        var y = rect.y;
+                    }
+            else {
+
+                if (e.target) {
+                    if (e.changedTouches && e.changedTouches[0]) {
+                        x = e.changedTouches[0].clientX;
+                        y = e.changedTouches[0].clientY;
+                    } else {
+                        var x = e.clientX;
+                        var y = e.clientY;
+                    }
                 } else {
-                    var x = e.clientX;
-                    var y = e.clientY;
+                    var x = e.x;
+                    var y = e.y;
                 }
-            } else {
-                var x = e.x;
-                var y = e.y;
             }
 
             var rect = el.getBoundingClientRect();

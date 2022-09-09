@@ -848,7 +848,7 @@ div[data-before]:before {
     box-sizing: border-box;
     display: flex;
     padding: 8px 8px 8px 32px;
-    width: 250px;
+    width: 220px;
     position: relative;
     cursor: default;
     font-size: 11px;
@@ -904,8 +904,8 @@ div[data-before]:before {
 }
 
 .jcontextmenu .jcontextmenu {
-    top: 4px;
-    left: 99%;
+    bottom: 1px;
+    right: 99%;
     opacity: 0;
     position: absolute;
 }
@@ -1705,6 +1705,7 @@ div[data-before]:before {
     background-color:#fff;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
+    padding-top: 50px !important;
     z-index:9002;
     border-radius: 4px;
 }
